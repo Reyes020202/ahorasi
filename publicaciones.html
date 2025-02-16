@@ -146,7 +146,7 @@
                 const post = {
                     text,
                     timestamp: firebase.firestore.FieldValue.serverTimestamp(),
-                    user: user.email,
+                    user: user.uid,  // Cambiado a user.uid
                     imageUrl: null
                 };
 
@@ -180,6 +180,7 @@
                     postsDiv.innerHTML = '';
                     snapshot.forEach(doc => {
                         const post = doc.data();
+                        const user = auth.currentUser;
                         if (new Date() - post.timestamp.toDate() < 24 * 60 * 60 * 1000) { // Mostrar publicaciones del último día
                             const postDiv = document.createElement('div');
                             postDiv.className = 'post';
@@ -188,7 +189,7 @@
                                 ${post.imageUrl ? `<img src="${post.imageUrl}" alt="Imagen de la publicación" style="width:100%; margin-top: 10px;">` : ''}
                                 <textarea id="comment-${doc.id}" placeholder="Escribe un comentario..."></textarea>
                                 <button onclick="addComment('${doc.id}')">Comentar</button>
-                                <button onclick="deletePost('${doc.id}')">Borrar Publicación</button>
+                                ${post.user === user.uid ? `<button onclick="deletePost('${doc.id}')">Borrar Publicación</button>` : ''}
                                 <div class="comments" id="comments-${doc.id}"></div>
                             `;
                             postsDiv.appendChild(postDiv);
@@ -205,7 +206,7 @@
             if (commentText) {
                 const comment = {
                     text: commentText,
-                    user: user.email,
+                    user: user.uid,  // Cambiado a user.uid
                     timestamp: firebase.firestore.FieldValue.serverTimestamp()
                 };
 
@@ -224,13 +225,14 @@
                 .orderBy('timestamp', 'desc')
                 .onSnapshot(snapshot => {
                     commentsDiv.innerHTML = '';
+                    const user = auth.currentUser;
                     snapshot.forEach(doc => {
                         const comment = doc.data();
                         const commentDiv = document.createElement('div');
                         commentDiv.className = 'comment';
                         commentDiv.innerHTML = `
                             <p><strong>${comment.user}:</strong> ${comment.text}</p>
-                            <button onclick="deleteComment('${postId}', '${doc.id}')">Borrar Comentario</button>
+                            ${comment.user === user.uid ? `<button onclick="deleteComment('${postId}', '${doc.id}')">Borrar Comentario</button>` : ''}
                         `;
                         commentsDiv.appendChild(commentDiv);
                     });
