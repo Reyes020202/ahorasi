@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papiro de Rhind</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="section">
+        <button onclick="window.location.href='index.html'">Volver al Menú Inicial</button>
+        <h1>Papiro de Rhind</h1>
+        <div class="grid-container">
+            <div class="grid-item" onclick="showText('text1')">
+                <img src="1.png" alt="Imagen 1">
+                <p>Problema 1</p>
+            </div>
+            <div class="grid-item" onclick="showText('text2')">
+                <img src="1 (1).png" alt="Imagen 2">
+                <p>Problema 2</p>
+            </div>
+            <div class="grid-item" onclick="showText('text3')">
+                <img src="1 (2).png" alt="Imagen 3">
+                <p>Problema 3</p>
+            </div>
+            <div class="grid-item" onclick="showText('text4')">
+                <img src="1 (3).png" alt="Imagen 4">
+                <p>Fracciones Unitarias</p>
+            </div>
+            <div class="grid-item" onclick="showText('text5')">
+                <img src="1 (4).png" alt="Imagen 5">
+                <p>Falsa Posición</p>
+            </div>
+            <div class="grid-item" onclick="showText('text6')">
+                <img src="1 (5).png" alt="Imagen 6">
+                <p>Distribución Pan y Cerveza</p>
+            </div>
+            <div class="grid-item" onclick="showText('text7')">
+                <img src="1 (6).png" alt="Imagen 7">
+                <p>Áreas y Volúmenes</p>
+            </div>
+            <div class="grid-item" onclick="showText('text8')">
+                <img src="1 (7).png" alt="Imagen 8">
+                <p>Aplicaciones Cotidianas</p>
+            </div>
+        </div>
+
+        <div id="text1" class="text-content">
+            <h2>Problema 1</h2>
+            <p>Un pedazo de pan es dividido en 7 partes iguales. ¿Cuál es la fracción de cada parte?</p>
+        </div>
+        <div id="text2" class="text-content">
+            <h2>Problema 2</h2>
+            <p>Si un campo de tierra tiene un área de 10 hectáreas y se divide en 5 partes iguales, ¿cuál es el área de cada parte?</p>
+        </div>
+        <div id="text3" class="text-content">
+            <h2>Problema 3</h2>
+            <p>Un contenedor tiene 20 litros de agua. Si se vierte en 4 recipientes iguales, ¿cuántos litros tendrá cada recipiente?</p>
+        </div>
+        <div id="text4" class="text-content">
+            <h2>Cálculo con Fracciones Unitarias</h2>
+            <p>Los egipcios usaban solo fracciones con numerador 1, como 1/2, 1/3, 1/4. Implementar un sistema donde los usuarios puedan ingresar fracciones y ver cómo los egipcios las descomponían. Ejemplo: Convertir 2/3 en la suma de fracciones unitarias: Entrada: 2/3, Salida: 1/2 + 1/6</p>
+        </div>
+        <div id="text5" class="text-content">
+            <h2>Regla de Falsa Posición (Proto-Álgebra)</h2>
+            <p>Un número más su mitad es igual a 12. ¿Cuál es el número? Respuesta egipcia usando un método de prueba y error.</p>
+        </div>
+        <div id="text6" class="text-content">
+            <h2>Problemas de Distribución de Pan y Cerveza</h2>
+            <p>Minijuego donde el usuario debe repartir pan entre trabajadores de acuerdo con reglas egipcias.</p>
+        </div>
+        <div id="text7" class="text-content">
+            <h2>Cálculo de Áreas y Volúmenes en la Geometría Egipcia</h2>
+            <p>Implementar un área donde los usuarios calculen áreas de figuras egipcias como pirámides y trapecios.</p>
+        </div>
+        <div id="text8" class="text-content">
+            <h2>Aplicaciones de Fracciones en la Vida Cotidiana Egipcia</h2>
+            <p>Un tablero con distintas aplicaciones: Cálculo de raciones de comida, Intercambio de bienes, Cálculo de impuestos.</p>
+        </div>
+    </div>
+
+    <script src="papiro-rhind.js"></script>
+</body>
+</html>

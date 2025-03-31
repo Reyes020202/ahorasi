@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uso de Fracciones</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="section">
+        <button onclick="window.location.href='index.html'">Volver al Menú Inicial</button>
+        <h1>Uso de Fracciones en la Economía Egipcia</h1>
+        <p>Los egipcios usaban fracciones en diversas aplicaciones económicas, como la división de pan y las medidas de tierra. A continuación, se muestran algunos ejemplos históricos:</p>
+        <div class="fraction-uses">
+            <div class="fraction-use" onclick="toggleDetail('pan')">
+                <h2>División de Pan</h2>
+                <p>Ver más</p>
+                <div class="fraction-use-detail" id="pan">
+                    <h3>División de Pan</h3>
+                    <p>Los egipcios dividían el pan en fracciones para distribuirlo de manera equitativa entre los trabajadores. Por ejemplo, un pan podía ser dividido en 1/2, 1/4, y 1/8 partes para diferentes individuos.</p>
+                    <canvas id="breadCanvas" width="400" height="400"></canvas>
+                </div>
+            </div>
+            <div class="fraction-use" onclick="toggleDetail('tierra')">
+                <h2>Medidas de Tierra</h2>
+                <p>Ver más</p>
+                <div class="fraction-use-detail" id="tierra">
+                    <h3>Medidas de Tierra</h3>
+                    <p>En la economía egipcia, las fracciones también se utilizaban para medir la tierra. Las parcelas podían ser divididas en 1/2, 1/3, y 1/6 para diferentes propósitos agrícolas.</p>
+                    <canvas id="landCanvas" width="400" height="400"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="uso-fracciones.js"></script>
+</body>
+</html>
